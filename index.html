@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dürüm Price Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Bricolage+Grotesque:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="card">
+        <h1>How many dürüm(s) is this?</h1>
+
+        <form id="calculator" class="controls" aria-label="Dürüm price calculator">
+          <label>
+            Thing price (CHF)
+            <input id="thingPrice" type="number" min="0" step="0.1" value="24" />
+          </label>
+
+          <label>
+            Average dürüm price in Switzerland (CHF)
+            <input id="durumPrice" type="number" min="0.1" step="0.1" value="12" />
+          </label>
+        </form>
+
+        <div class="result-block">
+          <p id="resultText" class="result-text">24 CHF = 2.00 dürüms</p>
+          <p id="helperText" class="helper-text">2 full dürüm pictures</p>
+
+          <div class="action-row">
+            <button id="exportCardButton" class="export-button" type="button">Export share card</button>
+            <p id="exportStatus" class="export-status" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div id="durumGallery" class="durum-gallery" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <template id="durumIconTemplate">
+      <div class="durum-icon">
+        <img src="./assets/durum.png" alt="Dürüm" loading="lazy" />
+      </div>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
